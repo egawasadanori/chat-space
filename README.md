@@ -2,8 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 
 ### Association
@@ -15,10 +15,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false |
+|body|text||
 |image|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 |created_at|datetime|null: false|
 
 
@@ -32,18 +32,13 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|bigint|null: false|
-|email|varchar|null: false|
-|encrypted_password|varchar|null: false|
-|reset_password_token|varchar||
-|reset_password_sent_at|varchar||
-|created_at|datetime||
-|update_at|datetime||
-|nickname|varchar|null: false|
+|nickname|string|null: false|
 
 
 ### Association
-- belongs_to :group
+- has_many :groups
 - has_many :messages
+- has_many :members
 
 
 ## groupテーブル
@@ -51,10 +46,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|bigint|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
 |created_at|datetime|null: false|
 |update_at|datetime||
-|group_name|varchar|null: false|
+|name|varchar|null: false|
 
 
 ### Association
