@@ -52,7 +52,7 @@
 |------|----|-------|
 |id|bigint|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|created_at|datetime||
+|created_at|datetime|null: false|
 |update_at|datetime||
 |group_name|varchar|null: false|
 
