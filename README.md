@@ -2,8 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
-|group_id|reference|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -17,8 +17,8 @@
 |------|----|-------|
 |body|text||
 |image|text||
-|user_id|reference|null: false, foreign_key: true|
-|group_id|reference|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 |created_at|datetime|null: false|
 
 
@@ -36,9 +36,10 @@
 
 
 ### Association
-- has_many :groups
-- has_many :messages
 - has_many :members
+- has_many :groups, through: :members
+- has_many :messages
+
 
 
 ## groupテーブル
@@ -49,9 +50,10 @@
 |user_id|reference|null: false, foreign_key: true|
 |created_at|datetime|null: false|
 |update_at|datetime||
-|name|varchar|null: false|
+|name|string|null: false|
 
 
 ### Association
-- has_many :groups
+- has_many :members
+- has_many :users, through: :members
 - has_many :messages
