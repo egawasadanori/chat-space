@@ -19,7 +19,6 @@
 |image|text||
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
-|created_at|datetime|null: false|
 
 
 ### Association
@@ -55,5 +54,5 @@
 
 ### Association
 - has_many :members
-- belongs_to :user, through: :members
+- has_many :users, through: :members
 - has_many :messages
