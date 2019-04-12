@@ -55,5 +55,5 @@
 
 ### Association
 - has_many :members
-- belongs_to :user, through: :members
+- has_many :users, through: :members
 - has_many :messages
