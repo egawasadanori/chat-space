@@ -1,0 +1,107 @@
+ !!!
+%html{lang: "ja"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{charset: "UTF-8"}/
+    %link{href: "reset.css", rel: "stylesheet"}/
+    %link{href: "style-chat.css", rel: "stylesheet"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Document
+  %body
+    .wrapper
+      .chat-side
+        .side-header
+          %p.side-header__user-name name
+          %ul.user-menu
+            %li.user-menu__edit-user
+            %li.user-menu__new-group
+        .groups
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+          %a{href: "group/message"}
+            .group
+              %p.group__group-name group-name
+              %p.group__latest-message 投稿文です。
+      .chat-main
+        .main-header
+          .current-group{"data-group_id" => "1"}
+            %h2.current_group_name group-name
+            %ul.member_list member :
+          %a{href: "group/edit"}
+            .main-header__edit-btn Edit
+        .messages
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/11(thu)
+            %p.message__text 投稿文です。
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/12(wed)
+            %p.message__text 投稿文です。
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/12(wed)
+            %p.message__text 投稿文です。
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/12(wed)
+            %p.message__text 投稿文です。
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/12(wed)
+            %p.message__text 投稿文です。
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/12(wed)
+            %p.message__text 投稿文です。
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/12(wed)
+            %p.message__text 投稿文です。
+          .message{"data-message_id" => "1"}
+            .upper_info
+              %p.upper-info__user user-name
+              %p.upper-info__date 2019/04/12(wed)
+            %p.message__text 投稿文です。
+        .form
+          .input-box
+            .input-class_text
+          .new-message__submit-btn
