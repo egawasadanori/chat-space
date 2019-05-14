@@ -56,11 +56,11 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
 group :development do 
-gem 'rspec'
+  gem 'rspec'
 end
 group :test do 
-gem 'rspec'
+  gem 'rspec'
 end
 group :production do 
-gem 'unicorn'
+  gem 'unicorn'
 end
