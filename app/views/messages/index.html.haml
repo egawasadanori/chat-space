@@ -4,7 +4,10 @@
       %p.side-header__user-name name
       %ul.user-menu
         %li.user-menu__edit-user
-        %li.user-menu__new-group
+          =link_to do %i.fa.fa-edit.create_group
+        %li.user-menu__new＿group
+          %a{href: "/users/188/edit"}
+          %i.fa.fa-cog.setting
     .groups
       %a{href: "group/message"}
         .group
