@@ -10,7 +10,7 @@ html, body {
   display: flex;
 }
 
-.chat-side{
+.side_bar{
   width: 300px;
   height: 100%;
   }
@@ -18,20 +18,22 @@ html, body {
   .side-header{
     padding: 0 20px;
     position: fixed;
-    top: 0;
+    
     width: 260px;
     height: 100px;
     display: flex;
     background-color: #253141;
-    &__user-name{
+    }  
+  
+    .header__name{
       font-size: 16px;
       font-weight: bold;
       color: #ffffff;
       padding: 38px 0;
     }
-  }
+  
 
-  .user-menu{
+  .header__lists{
     display: flex;
     box-sizing: border-box;
     list-style: none;
@@ -44,16 +46,7 @@ html, body {
     top: 45px;
   }
 
-  .icon1{
-    color: white;
-    display: flex;
-    font-weight: 900;
-    font-family: "FontAwesome";
-    width:16px;
-    height:16px;
-  }
-
-  .icon2{
+  .icon{
     color: white;
     display: flex;
     font-weight: 900;
@@ -76,7 +69,8 @@ a {
 
 .group{
   margin-bottom: 40px;
-  &__group-name{
+ }
+.group__name{
     font-size: 15px;
     font-weight: bold;
     color: #ffffff;
@@ -84,7 +78,7 @@ a {
     width: 260px;
     height: 23px; 
   }
-  &__latest-message{
+  .group__message{
     font-size: 11px;
     font-weight: bold;
     color: #ffffff;
@@ -92,7 +86,7 @@ a {
     width: 260px;
     height: 23px;
   }
-}
+
 
   .chat-main{
   width: calc(100% - 300px);
@@ -114,7 +108,7 @@ a {
   padding: 0px 40px;
   border-bottom: solid 1px #eee;
   position: fixed;
-  top: 0;
+
   display: flex;
   &__edit-btn{ 
     line-height: 40px;
