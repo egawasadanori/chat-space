@@ -1,14 +1,15 @@
 .wrapper
   .chat-side
-  = render 'messages/side_bar'
+  = render 'devise/shared/side_bar'
   .chat-main
     .main-header
       .current-group
         %h2.current_group_name group-name
-        %ul.member_list member :
+        %ul.member_list member : 
       %a{href: "edit"}
         .main-header__edit-btn Edit
     .messages
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
