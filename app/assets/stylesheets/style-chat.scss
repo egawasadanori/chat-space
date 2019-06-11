@@ -102,7 +102,6 @@ a {
   padding: 0px 40px;
   border-bottom: solid 1px #eee;
   position: fixed;
-
   display: flex;
   &__edit-btn{ 
     line-height: 40px;
@@ -147,32 +146,33 @@ a {
   overflow: scroll;
 }
 
-.message{
+.lower-message{
   width: calc(100vh - 300px);
   padding-bottom: 40px;
-  &__text{
+  &__content{
     color: #434a54;
     font-size: 14px;
     margin-bottom: 10px;
   }
 }
 
-.upper-info{
+.upper-message{
   margin-bottom: 10px;
   display: flex;
-  &__user{
+}
+  .upper-message__user{
     color: #434a54;
     font-size: 16px;
     font-weight: bold;
     float: left;
   }
-  &__date{
+  .upper-message__date{
     color: #999999;
     font-size: 12px;
     margin-left: 10px;
     float: left;
   }
-}
+
 
 .form {
     width: calc(100% - 300px);
