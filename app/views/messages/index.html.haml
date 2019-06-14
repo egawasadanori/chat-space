@@ -4,8 +4,11 @@
   .chat-main
     .main-header
       .current-group
-        %h2.current_group_name group-name
-        %ul.member_list member : 
+        %h2.current_group_name 
+          = @group.name
+        %ul.member_list
+          - @group.users.each do |user|
+            = user.name
       %a{href: "edit"}
         .main-header__edit-btn Edit
     .messages
@@ -17,4 +20,4 @@
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'images', class: 'icon'
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+          = f.submit 'Send', class: 'form__submit'
