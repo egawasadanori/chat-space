@@ -59,7 +59,12 @@ group :development do
   gem 'rspec'
 end
 group :test do 
-  gem 'rspec'
+# gem 'rspec'
+  gem 'faker'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
 end
 group :production do 
   gem 'unicorn'

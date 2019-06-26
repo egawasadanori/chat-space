@@ -53,6 +53,9 @@ html, body {
     font-family: "FontAwesome";
     width:16px;
     height:16px;
+    &_2{
+      color: black;
+    }
   }
 
 a {
@@ -184,15 +187,17 @@ a {
       border: none;
       float: left;
       height: 50px;
-      width: calc(100% - 150px);
+      width: calc(100% - 200px);
       margin-top: 27px;
       margin-left: 10px;
     }
     &__mask {
-      //background-color: #ffffff;
-      //float: left;
-      //height: 50px;
-      //padding-right: 10px;
+      background-color: #ffffff;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      width: 35px;
+      margin-top: 27px;
       &__image {
         font-size: 20px;
         line-height: 50px;
@@ -210,7 +215,7 @@ a {
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
-      margin-top : 11px;
-      margin-right: 17px;
+      margin-top : 0px;
+      margin-right: -120px;
     }
   }

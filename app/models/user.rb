@@ -14,5 +14,5 @@ class User < ApplicationRecord
     #  @groups.users.each do |user|
       #  puts @groups.users end
     #  end
-# 　 end
+#  end
 end
