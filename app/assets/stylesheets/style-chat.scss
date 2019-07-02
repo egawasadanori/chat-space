@@ -10,7 +10,7 @@ html, body {
   display: flex;
 }
 
-.chat-side{
+.side_bar{
   width: 300px;
   height: 100%;
   }
@@ -18,20 +18,22 @@ html, body {
   .side-header{
     padding: 0 20px;
     position: fixed;
-    top: 0;
+    
     width: 260px;
     height: 100px;
     display: flex;
     background-color: #253141;
-    &__user-name{
+    }  
+  
+    .header__name{
       font-size: 16px;
       font-weight: bold;
       color: #ffffff;
       padding: 38px 0;
     }
-  }
+  
 
-  .user-menu{
+  .header__lists{
     display: flex;
     box-sizing: border-box;
     list-style: none;
@@ -44,55 +46,44 @@ html, body {
     top: 45px;
   }
 
-  .icon1{
+  .icon{
     color: white;
     display: flex;
     font-weight: 900;
     font-family: "FontAwesome";
     width:16px;
     height:16px;
+    &_2{
+      color: black;
+    }
   }
-
-  .icon2{
-    color: white;
-    display: flex;
-    font-weight: 900;
-    font-family: "FontAwesome";
-    width:16px;
-    height:16px;
-  }
-
-.groups{
-  margin-top: 100px;
-  overflow: scroll;
-  width: 300px;
-  height: calc(100vh - 100px);
-  background-color: #2f3e51 
-}
 
 a {
   text-decoration: none;
   }
 
-.group{
-  margin-bottom: 40px;
-  &__group-name{
-    font-size: 15px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 15px 20px;
-    width: 260px;
-    height: 23px; 
+  .groups {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    margin-top: 100px;
+    overflow: scroll;
   }
-  &__latest-message{
-    font-size: 11px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 0px 20px;
-    width: 260px;
-    height: 23px;
-  }
-}
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+
+      &__name {
+        color: #ffffff;
+        font-size: 15px;
+      }
+      &__message {
+        color: #ffffff;
+        font-size: 15px;
+        margin-top: 5px;
+      }
+    }
+
 
   .chat-main{
   width: calc(100% - 300px);
@@ -114,7 +105,6 @@ a {
   padding: 0px 40px;
   border-bottom: solid 1px #eee;
   position: fixed;
-  top: 0;
   display: flex;
   &__edit-btn{ 
     line-height: 40px;
@@ -159,37 +149,73 @@ a {
   overflow: scroll;
 }
 
-.message{
+.lower-message{
   width: calc(100vh - 300px);
   padding-bottom: 40px;
-  &__text{
+  &__content{
     color: #434a54;
     font-size: 14px;
     margin-bottom: 10px;
   }
 }
 
-.upper-info{
+.upper-message{
   margin-bottom: 10px;
   display: flex;
-  &__user{
+}
+  .upper-message__user{
     color: #434a54;
     font-size: 16px;
     font-weight: bold;
     float: left;
   }
-  &__date{
+  .upper-message__date{
     color: #999999;
     font-size: 12px;
     margin-left: 10px;
     float: left;
   }
-}
 
-.form{
-  width: calc(100% - 300px);
-  background: gray;
-  height: 100px;
-  position: fixed;
-  bottom: 0;
-}
+
+.form {
+    width: calc(100% - 300px);
+    background: #dddddd;
+    height: 100px;
+    position: fixed;
+    bottom: 0; 
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 200px);
+      margin-top: 27px;
+      margin-left: 10px;
+    }
+    &__mask {
+      background-color: #ffffff;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      width: 35px;
+      margin-top: 27px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
+      background-color: #38aef0;
+      border: none;
+      color: #ffffff;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+      margin-top : 0px;
+      margin-right: -120px;
+    }
+  }
