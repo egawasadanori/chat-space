@@ -22,7 +22,6 @@ $(function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
      var formData = new FormData(this);
-    //  console.log(formData);
      var url = $(this).attr('action');
      $.ajax({
        url: url,
@@ -33,7 +32,6 @@ $(function(){
        contentType: false
     })
     .done(function(message){
-      console.log(message)
       var html = buildMessage(message);
       $('.messages').append(html)
       $('#message_content').val('')
