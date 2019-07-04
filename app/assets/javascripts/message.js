@@ -38,6 +38,8 @@ $(function(){
       $('.messages').append(html)
       $('#message_content').val('')
       $('input').prop('disabled', false);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+
     })
     .fail(function(){
       alert('エラー')
