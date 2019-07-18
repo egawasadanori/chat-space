@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    # binding.pry
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    # @users.delete current_user
     respond_to do |format| 
       format.json
     end

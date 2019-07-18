@@ -57,7 +57,7 @@ $(function(){
         $(this).parent().remove();
         })   
   })
-      $(document).on('click', '.chat-group-user__btn--remove', function(html_add_user){
-        $("#chat-group-users").remove(html_add_user);
+      $(document).on('click', '.chat-group-user__btn--remove', function(){
+        $(".chat-group-user").remove();
       })
 });
