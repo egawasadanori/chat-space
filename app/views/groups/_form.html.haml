@@ -24,13 +24,14 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
       -# -f.collection_check_boxes :user_ids, User.all, :id, :name
-      
+      %p.chat-group-user__name 
+        =current_user.name
+        %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}/
       #chat-group-users
         -# #chat-group-user-22.chat-group-user.clearfix
         -# %input{name: "chat_group[user_ids][]", type: "hidden", value: "22"}/
-        %p.chat-group-user__name
-          - @group.users.each do |user|
-            = user.name
+        
+            
     
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
