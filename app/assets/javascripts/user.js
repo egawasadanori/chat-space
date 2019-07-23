@@ -10,7 +10,6 @@ $(function(){
     }
   
   $('#user-search-field').on('keyup',function(e){
-    // e.preventDefault(); 
       var input = $(this).val(); 
       $.ajax({ 
         url:'/users', 
@@ -25,12 +24,8 @@ $(function(){
         $('#user-search-result').empty();
         user.forEach(function(user){
         var html =buildUser(user);
-        
         $('#user-search-result').append(html);
-        // $('#user-search-result').val('');
-         console.log(this)
         $(this).parent().remove();
-        
        })
       })
       .fail(function(){
@@ -47,16 +42,14 @@ $(function(){
       }
 
       $(document).on('click', '.chat-group-user__btn--add', function(user_name, user_id){
-        // console.log(user_name, user_id);
-        $('#chat-group-users').empty();
         var user_name = $(this).data("user-name");
         var user_id = $(this).data("user-id");
         var html_add_user =buildAddedUser(user_name, user_id);
         $("#chat-group-users").append(html_add_user);
         $(this).parent().remove();
-        })   
+        });
   })
       $(document).on('click', '.chat-group-user__btn--remove', function(){
-        $(".chat-group-user").remove();
+        $("#chat-group-user-8").remove();
       })
 });
