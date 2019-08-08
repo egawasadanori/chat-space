@@ -26,6 +26,7 @@ $(function(){
         var html =buildUser(user);
         $('#user-search-result').append(html);
         $(this).parent().remove();
+        // $('#chat-group-users').empty();
        })
       })
       .fail(function(){
@@ -42,6 +43,7 @@ $(function(){
       }
 
       $(document).on('click', '.chat-group-user__btn--add', function(user_name, user_id){
+        // $('#chat-group-user-8').empty();
         var user_name = $(this).data("user-name");
         var user_id = $(this).data("user-id");
         var html_add_user =buildAddedUser(user_name, user_id);
@@ -50,6 +52,6 @@ $(function(){
         });
   })
       $(document).on('click', '.chat-group-user__btn--remove', function(){
-        $("#chat-group-user-8").remove();
+        $("#chat-group-user-8").remove()
       })
 });
