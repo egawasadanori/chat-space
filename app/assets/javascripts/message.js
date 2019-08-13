@@ -1,6 +1,6 @@
 $(function(){
   function buildMessage(message){
-     var html = `<div class="message">
+     var html = `<div class="message" data-id=${message.id}>
                     <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.name}
@@ -68,6 +68,7 @@ $(function(){
  }
   
       function reloadMessages () {
+        console.log("ok");
         if(window.location.href.match(/\/groups\/\d+\/messages/)) {
         var last_message_id = $('.message').last().data('id')
         $.ajax({
