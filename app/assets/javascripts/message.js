@@ -44,57 +44,28 @@ $(function(){
     })
   })
   
-  function buildMessageHTML(message){
-    if (message.content && message.image.url){
-      var html_update = '<div class="message" data-id=' + message.id + '>' +
-        '<div class="upper-message">' +
-          '<div class="upper-message__user-name">' +
-            message.user_name +
-          '</div>' +
-          '<div class="upper-message__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="lower-message">' +
-          '<p class="lower-message__content">' +
-            message.content +
-          '</p>' +
-          '<img src="' + message.image.url + '" class="lower-message__image" >' +
-        '</div>' +
-      '</div>'
-   } else if (message.content) {
-      var html_update = '<div class="message" data-id=' + message.id + '>' +
-        '<div class="upper-message">' +
-          '<div class="upper-message__user-name">' +
-            message.user_name +
-          '</div>' +
-          '<div class="upper-message__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="lower-message">' +
-          '<p class="lower-message__content">' +
-            message.content +
-          '</p>' +
-        '</div>' +
-      '</div>'
-    } else if (message.image.url) {
-      var html_update = '<div class="message" data-id=' + message.id + '>' +
-        '<div class="upper-message">' +
-          '<div class="upper-message__user-name">' +
-            message.user_name +
-          '</div>' +
-          '<div class="upper-message__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="lower-message">' +
-          '<img src="' + message.image.url + '" class="lower-message__image" >' +
-        '</div>' +
-      '</div>'
-    };
-    return html_update;
-};
+  function buildMessageHTML(message){ 
+      var image = message.image.url ? `<img src= ${message.image.url} class="lower-message__image" />` :"";
+      var content = message.content ? `<p class="lower-message__content">${message.content}</p>` :"";
+      var html_update =
+      `<div class="message" data-id=${message.id}>
+        <div class="upper-message">
+          <div class="upper-message__user-name">
+            ${message.user_name}
+          </div>
+          <div class="upper-message__date">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="lower-message">
+          <p class="lower-message__content">
+            ${content}
+          </p>
+           ${image}
+        </div>
+      </div>`
+   return html_update;
+ }
   
       function reloadMessages () {
         if(window.location.href.match(/\/groups\/\d+\/messages/)) {
@@ -115,7 +86,7 @@ $(function(){
         .fail(function() {
           alert('エラー');
         });
-      };
-     }
+       };
+      }
   setInterval(reloadMessages, 5000);
 });
