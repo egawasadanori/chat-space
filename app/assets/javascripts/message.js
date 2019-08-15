@@ -44,7 +44,7 @@ $(function(){
     })
   })
   
-  function buildMessageHTML(message){ 
+  function buildMessageHTML(message){
       var image = message.image.url ? `<img src= ${message.image.url} class="lower-message__image" />` :"";
       var content = message.content ? `<p class="lower-message__content">${message.content}</p>` :"";
       var html_update =
@@ -70,13 +70,14 @@ $(function(){
       function reloadMessages () {
         if(window.location.href.match(/\/groups\/\d+\/messages/)) {
         var last_message_id = $('.message').last().data('id')
+        var current_group_id = $('.current-group').last().data('group-id')
         $.ajax({
-          url: '/groups/group_id/api/messages',
+          url: `/groups/${current_group_id}/api/messages`,
           type: 'get',
           dataType: 'json',
           data: {id: last_message_id}
         })
-        .done(function(data) {         
+        .done(function(data) {        
           data.forEach(function(message){
           var html_update = buildMessageHTML(message);
           $(".messages").append(html_update);

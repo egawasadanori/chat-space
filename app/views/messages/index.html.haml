@@ -3,7 +3,7 @@
   = render 'devise/shared/side_bar'
   .chat-main
     .main-header
-      .current-group
+      .current-group{data:{group_id: "#{@group.id}"}}
         %h2.current_group_name 
           = @group.name
         %ul.member_list
