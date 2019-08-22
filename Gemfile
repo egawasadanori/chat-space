@@ -69,7 +69,7 @@ group :test do
   gem 'factory_bot_rails'
 end
 group :production do 
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
 gem 'carrierwave'
 gem 'mini_magick'
