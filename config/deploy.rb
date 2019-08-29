@@ -11,7 +11,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['ssh -i iamwanderer.pem ec2-user@52.192.100.124']
+                  keys: ['ssh -i iamwanderer.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
